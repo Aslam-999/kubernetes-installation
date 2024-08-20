@@ -23,6 +23,7 @@ After creating the three VMs, perform the initial setup on all etcd nodes:
 ### 1. Enable SSH Password Authentication and Set Root Password
 
 Execute the following script on all three etcd nodes to enable SSH password authentication and set the root password:
+file name ssh-d.sh
 
 ```bash
 #!/bin/bash
@@ -37,7 +38,9 @@ systemctl reload sshd
 echo "[TASK 2] Set root password"
 echo -e "etcdadmin\netcdadmin" | passwd root >/dev/null 2>&1
 ```
-
+```chmod +x ssh-d.sh```
+to run shell script below command 
+```sh ssh-d.sh```
 ## Step 2: Install etcd on All Nodes
 
 Run the following commands on all three etcd nodes to install etcd:
